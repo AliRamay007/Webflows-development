@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tab Buttons</title>
+<style>
+  .tab {
+    overflow: hidden;
+  }
+
+  .tab button {
+    background-color: yellow;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+
+  .tab button:hover {
+    background-color: black;
+  }
+
+  .active {
+    background-color:gray;
+    color: green    ;
+  }
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button id="act-btn1" class="tablinks website-pricing-button1 active" onclick="openCity(event, 'London', 'act-btn1')">Website Pricing</button>
+  <button id="act-btn2" class="tablinks website-pricing-button2" onclick="openCity(event, 'Paris', 'act-btn2')">Logo Pricing</button>
+  <button id="act-btn3" class="tablinks website-pricing-button2" onclick="openCity(event, 'Tokyo', 'act-btn3')">Video Pricing</button>
+  <button id="act-btn4" class="tablinks website-pricing-button3" onclick="openCity(event, 'Tokyo', 'act-btn4')">E-Commerce Pricing</button>
+</div>
+
+<script>
+  function openCity(evt, cityName, buttonId) {
+    var i, tablinks;
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    document.getElementById(buttonId).classList.add("active");
+  }
+</script>
+
+</body>
+</html>
